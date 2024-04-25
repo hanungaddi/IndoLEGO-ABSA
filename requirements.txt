@@ -1,6 +1,6 @@
-transformers==4.24.0
+
 datasets==2.10.1
-torch==1.13.1
+accelerate
 sentencepiece
 spacy
 sacremoses
