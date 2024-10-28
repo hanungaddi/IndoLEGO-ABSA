@@ -203,7 +203,11 @@ def main():
             raise NotImplementedError("Only Seq2Seq and CausalLM Model")
         
     # Training
-    trainer.train(resume_from_checkpoint="/content/absa-robota-2")
+    print(train_args.resume_from_checkpoint)
+    if train_args.resume_from_checkpoint:
+      trainer.train(resume_from_checkpoint=train_args.resume_from_checkpoint)
+    else:
+      trainer.train()
 
     # Save
     if trainer.is_world_process_zero():
